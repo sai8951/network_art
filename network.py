@@ -1,3 +1,4 @@
+import os
 import random
 from matplotlib import pyplot as plt
 from scipy.spatial import distance
@@ -5,6 +6,8 @@ from scipy.spatial import distance
 
 N = 100
 thres = 20
+
+os.makedirs('./output', exist_ok=True)
 
 points = [(random.uniform(0,100), random.uniform(0,100)) for i in range(N)]
 # points = [(random.normalvariate(0,30), random.normalvariate(0,30)) for i in range(N)]
@@ -22,5 +25,5 @@ for i in points:
 
 # plt.axis([25, 75, 25, 75])
 plt.show()
-# plt.savefig('.\\output\\network3.png')
+# plt.savefig('./output/network3.png')
 plt.close()
