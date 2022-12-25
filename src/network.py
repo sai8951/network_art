@@ -18,11 +18,10 @@ points = [np.array((random.uniform(0,100), random.uniform(0,100))) for i in rang
 
 plt.figure(figsize = [8,8])
 plt.rcParams['axes.facecolor'] = 'black'
-for i in points:
+for num, i in enumerate(points):
+    if (num+1) % 10 == 0:
+        print(f"Processing {num+1}th point...")
     for j in points:
-        print(i)
-        print(j)
-
         if np.allclose(i, j):
             pass
         dist = np.linalg.norm(i-j)
